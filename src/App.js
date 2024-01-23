@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import react from 'react';
+// import { CssBaseline, Grid } from '@mui/material';
+import Grid from '@mui/material/Unstable_Grid2';
+import CssBaseline from '@mui/material/CssBaseline';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. Hello!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Header from './components/Header/Header';
+import List from './components/List/List';
+import Map from './components/Map/Map';
+
+const App = () => {
+    return (
+
+        <>
+        <CssBaseline />
+            <Header />
+            <Grid container spacing={3} style={{width:'100%'}}>
+                <Grid item xs = {12} md={4}> 
+                <List />
+                </Grid>
+                <Grid item xs = {12} md={8}> 
+                <Map />
+                </Grid>
+            </Grid>
+        </>
+    )
 }
 
 export default App;
